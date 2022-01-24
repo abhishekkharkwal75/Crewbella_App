@@ -9,6 +9,7 @@ class Controller extends ChangeNotifier {
   Map basic;
   fetchData() async {
     this.isloading = true;
+    notifyListeners();
     try {
       var response = await get(pathUrl);
       var data = jsonDecode(response.body);
